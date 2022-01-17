@@ -1,0 +1,94 @@
+theme:
+  type: Default
+autopunish:
+  status: false
+  animation: false
+  type: KICK
+  vl-type: total
+  vl-total: 15
+  reason: "&l|&8 Shade&r &l|%%n%%&eHey, &c%%player%%&e%%n%%Anti-Cheat caught you cheating."
+  custom-command: "ban %%player%% Kicked for %%check%% %%type%%"
+  case:
+    player: default
+    check: default
+    type: upper
+checks:
+  Reach:
+    A:
+      status: false
+      vl: 500
+      punish: false
+  Flight:
+    A:
+      status: true
+      vl: 10
+      punish: false
+    B:
+      status: true
+      vl: 10
+      punish: false
+    C:
+      status: true
+      vl: 10
+      punish: false
+    D:
+      status: true
+      vl: 10
+      punish: false
+  Motion:
+    A:
+      status: true
+      vl: 10
+      punish: false
+    B:
+      status: true
+      vl: 10
+      punish: false
+    C:
+      status: true
+      vl: 10
+      punish: false
+    D:
+      status: true
+      vl: 10
+      punish: false
+  Speed:
+    A:
+      status: true
+      vl: 10
+      punish: false
+    B:
+      status: true
+      vl: 10
+      punish: false
+    C:
+      status: true
+      vl: 10
+      punish: false
+    D:
+      status: true
+      vl: 10
+      punish: false
+  GroundSpoof:
+    A:
+      status: true
+      vl: 10
+      punish: false
+  BadPackets:
+    A:
+      status: true
+      vl: 10
+      punish: false
+    B:
+      status: true
+      vl: 10
+      punish: false
+  Step:
+    A:
+      status: true
+      vl: 10
+      punish: false
+    B:
+      status: true
+      vl: 10
+      punish: false

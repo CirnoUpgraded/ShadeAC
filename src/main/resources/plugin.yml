@@ -1,0 +1,11 @@
+name: ShadeAC
+version: ${project.version}
+main: top.n0rthmaster123.shadeac.ShadeAC
+authors: [BaGuAr]
+commands:
+  shade:
+    aliases: [shadeac,sac,shadeanticheat]
+  alerts:
+    aliases: [shadealerts,shadeflag]
+  violations:
+    aliases: [shadeviolations]
