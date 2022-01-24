@@ -31,10 +31,11 @@ public class CheckUtil {
         checks.add( new FlightC( new Check( "Flight","C", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new FlightD( new Check( "Flight","D", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new FlightE( new Check( "Flight","E", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new FlightF( new Check( "Flight","F", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new SpeedA( new Check( "Speed","A", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new SpeedB( new Check( "Speed","B", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new SpeedC( new Check( "Speed","C", ac , CheckCategory.MOVEMENT ) ) );
-        checks.add( new SpeedD( new Check( "Speed","D", ac , CheckCategory.MOVEMENT ) ) );
+        //checks.add( new SpeedD( new Check( "Speed","D", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new MotionA( new Check( "Motion","A", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new MotionB( new Check( "Motion","B", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new MotionC( new Check( "Motion","C", ac , CheckCategory.MOVEMENT ) ) );

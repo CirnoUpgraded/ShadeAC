@@ -18,7 +18,7 @@ public final class ShadeAC extends JavaPlugin {
 
     public static String prefix = "§8Shade §7>";
     public FileConfiguration config;
-    public static String author = "BaGuAr, Minik";
+    public static String author = "BaGuAr, Mimik";
     public static String version = "unknown";
 
     long tick;

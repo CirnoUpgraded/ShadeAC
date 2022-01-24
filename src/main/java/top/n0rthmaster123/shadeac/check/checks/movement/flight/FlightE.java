@@ -8,6 +8,7 @@ import top.n0rthmaster123.shadeac.ShadeAC;
 import top.n0rthmaster123.shadeac.check.Check;
 import top.n0rthmaster123.shadeac.check.Checker;
 import top.n0rthmaster123.shadeac.check.ShadeMoveEvent;
+import top.n0rthmaster123.shadeac.check.checks.movement.motion.MotionA;
 
 import java.util.HashMap;
 
@@ -27,6 +28,7 @@ public class FlightE extends Checker {
         if( e.lastDeltaYNull )return;
         Player p = e.getPlayer();
         if( p.isFlying() )return;
+        if( MotionA.onLadder( p ) )return;
         if( e.isWaterAround( e.getTo() , 2, 2 ) )return;
         if( buffers.get( p ) == null ){
             buffers.put( p , 0 );

@@ -35,10 +35,6 @@ checks:
       status: true
       vl: 10
       punish: false
-    E:
-      status: true
-      vl: 10
-      punish: false
   Motion:
     A:
       status: true
@@ -53,10 +49,6 @@ checks:
       vl: 10
       punish: false
     D:
-      status: true
-      vl: 10
-      punish: false
-    E:
       status: true
       vl: 10
       punish: false
@@ -93,6 +85,10 @@ checks:
       punish: false
   Step:
     A:
+      status: true
+      vl: 10
+      punish: false
+    B:
       status: true
       vl: 10
       punish: false

@@ -45,7 +45,7 @@ public class AlertThemeUtil {
         themes.add( new AlertTheme( "SharpCube1", "§7(§c!§7)§e %%player%%§c using§e %%check-upper%%§7(§e%%type%%§7) (§e %%info%% §7) (§e%%vl-check%%§7/§e%%vl%%§7)" , Material.FIREBALL , "BaGuAr","Within Info Message.\nCube and Sharp!" ) );
         themes.add( new AlertTheme( "SharpCube2", "§7(§c!§7)§e %%player%%§c using§e %%check-upper%%§7(§e%%type%%§7) (§e%%vl-check%%§7/§e%%vl%%§7)" , Material.FIREBALL , "BaGuAr","Without Info Message.\nCube and Sharp!" ) );
         themes.add( new AlertTheme( "PAC", "§c§lSAC§f§l:§a %%player%%§7 failed§c %%check%% %%type%%§7 check [VL: %%vl-check%%/%%vl%%] [Info: %%info%% ]" , Material.PRISMARINE , "BaGuAr","I added this theme because PAC's theme looks like good!" ) );
-
+        themes.add( new AlertTheme( "ACR", "§6§lSAC§r§7 %%player%% failed %%check%% %%type%%§8 |§7 %%info%% §8|§7 VL: %%vl-check%%/%%vl%%" , Material.GOLD_BLOCK , "BaGuAr","I added this theme because ACR's theme is cool!" ) );
 
         if( setTheme( ShadeAC.getPlugin().config.getString( "theme.type" ) ) != 0 ){
             setTheme( "Default" );
