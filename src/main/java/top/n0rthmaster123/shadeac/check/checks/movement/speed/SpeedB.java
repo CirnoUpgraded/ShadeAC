@@ -17,8 +17,9 @@ public class SpeedB extends Checker {
         if( e.getDeltaXZ() == 0 )return;
         double accel = Math.abs( Math.abs( e.getDeltaXZ() ) - Math.abs( e.getLastDeltaX() ) );
         if( e.getLastDeltaXZ() < e.getDeltaXZ() && accel > 0.8 ){
-            e.fail( this );
-            e.verbose( "accelXZ= " + accel );
+//            e.fail( this );
+//            e.verbose( "accelXZ= " + accel );
+            fail( e.getPlayer() , "accelXZ = " + accel );
         }
     }
 }

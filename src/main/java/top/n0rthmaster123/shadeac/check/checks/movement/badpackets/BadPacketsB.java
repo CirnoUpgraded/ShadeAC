@@ -20,12 +20,14 @@ public class BadPacketsB extends Checker {
     @EventHandler
     public void onMove(ShadeMoveEvent e){
         if( e.lastDeltaYNull )return;
+        if( e.isBadBlockAround() )return;
         if( e.getLastDeltaY() != 0 && e.getDeltaY() != 0 && e.getPlayer().isOnGround() ){
             Player p = e.getPlayer();
             if( vl.get( p ) != null ){
                 vl.put( p , vl.get( p ) + 1 );
                 if( vl.get( p ) > 2 ){
-                    e.fail( this );
+                    //e.fail( this );
+                    fail( p , "" );
                     vl.put( p , 0 );
                 }
             } else {

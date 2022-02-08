@@ -41,8 +41,9 @@ public class SpeedC extends Checker {
             timer.put( p , timer.get( p ) + 1 );
             double speed = timer.get(p)/20.0;
             if( speed > 1.05 ){
-                e.fail( this );
-                e.verbose( "TimerSpeed = " + speed );
+//                e.fail( this );
+//                e.verbose( "TimerSpeed = " + speed );
+                fail( p , "TimerSpeed = " + speed );
             }
         }else {
             timer.put( p , 1 );

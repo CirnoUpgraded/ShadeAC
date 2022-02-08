@@ -14,8 +14,9 @@ public class MotionC extends Checker {
     @EventHandler
     public void onMove(ShadeMoveEvent e){
         if( e.getDeltaY() > 99 ){
-            e.fail( this );
-            e.verbose( "deltaY = " + e.getDeltaY() );
+//            e.fail( this );
+//            e.verbose( "deltaY = " + e.getDeltaY() );
+            fail( e.getPlayer() , "deltaY = " + e.getDeltaY() );
         }
     }
 }

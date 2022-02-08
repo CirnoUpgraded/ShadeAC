@@ -41,6 +41,15 @@ public class FlightA extends Checker {
         return false;
     }
 
+    public static boolean isNearBlockAction(Player p,double a){
+        if( FlightA.lastPlaceAndBreak.get( p ) != null ){
+            if( ( System.currentTimeMillis() - FlightA.lastPlaceAndBreak.get( p ) ) < a ){
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     @EventHandler
     public void onMove(ShadeMoveEvent e){
@@ -56,8 +65,9 @@ public class FlightA extends Checker {
         if( isNearBlockAction( p ) )return;
         if( e.isWaterAround( e.getTo() , 2,2 ) || e.isWaterAround( e.getFrom() , 2,2 ) )return;
           if( e.getAirtick() > 11 && e.getTo().getY() >= e.getFrom().getY() ){
-              e.fail( this );
-              e.verbose( "AirTick = " + e.getAirtick() );
+//              e.fail( this );
+//              e.verbose( "AirTick = " + e.getAirtick() );
+              fail( p , "AirTick = " + e.getAirtick() );
           }
     }
 

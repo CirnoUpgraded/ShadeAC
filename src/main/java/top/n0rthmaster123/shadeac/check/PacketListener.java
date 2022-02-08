@@ -4,6 +4,8 @@ import io.github.retrooper.packetevents.event.PacketListenerAbstract;
 import io.github.retrooper.packetevents.event.PacketListenerPriority;
 import io.github.retrooper.packetevents.event.impl.PacketPlayReceiveEvent;
 import io.github.retrooper.packetevents.packettype.PacketType;
+import io.github.retrooper.packetevents.packetwrappers.WrappedPacket;
+import io.github.retrooper.packetevents.packetwrappers.play.in.flying.WrappedPacketInFlying;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -30,6 +32,7 @@ public class PacketListener extends PacketListenerAbstract {
 //            }
 
             boolean doFallDist = false;
+
 
             if( onGround( e.getPlayer().getLocation() ) || isCloseToGround( e.getPlayer().getLocation() ) ){
                 //e.getPlayer().sendMessage( "yes ground cs = " + e.getPlayer().isOnGround() + " 0");
@@ -98,6 +101,26 @@ public class PacketListener extends PacketListenerAbstract {
                             p.sendMessage( alert );
                         }
                     }
+
+//
+//
+//                    if( FailUtil.getFails( player ) != null ){
+//                        for( Fail fail : FailUtil.getFails( player ) ){
+//                            if( fail.failed ){
+//                                ShadeUtil.addVL( null ,player );
+//                                ShadeUtil.addVL( fail.check,player );
+//                            }
+//                            for( Player p : Bukkit.getOnlinePlayers() ){
+//                                if( ShadeUtil.isAlertEnabled( p ) && p.hasPermission(  "shade.alerts" ) && fail.failed ){
+//                                    //p.sendMessage( ShadeAC.prefix + "§c " + player.getName() + "§7 failed§6 " + check.getCheck() + "§8(§eVL§a " + ShadeUtil.getVL( check , player ) + "§8/§a" + ShadeUtil.getVL( null , player ) + "§8) (§eType:§a " + check.getType() + "§8) (§eInfo:§a " + ( shade.verbosed ? shade.verbose : "Nothing") + " §8)"  );
+//                                    alert = AlertThemeUtil.getCurrentTheme().getReplacedMessage( player , fail.check , ShadeUtil.getVL( null , player ) ,ShadeUtil.getVL( fail.check , player ), ( fail.vbed ? fail.info : "Nothing") );
+//                                    p.sendMessage( alert );
+//                                }
+//                            }
+//                        }
+//                    }
+//
+//                    FailUtil.clear( player );
 
 
                     ShadePunishEvent punishEvent = new ShadePunishEvent( player, check );

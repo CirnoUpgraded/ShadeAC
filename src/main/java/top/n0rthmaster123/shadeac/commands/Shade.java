@@ -20,7 +20,7 @@ public class Shade implements CommandExecutor {
             "§8Shade §aAnti§cCheat§b " + ShadeAC.version + "§a By§b " + ShadeAC.author + "\n" +
             "§b§m=================================================§r\n \n" +
             "§b/shade menu§7 - Opens ShadeAC Control Panel.\n" +
-            "§b/shade§7 or§b /shade help§7 - Opens ShadeAC Control Panel.\n" +
+            "§b/shade§7 or§b /shade help§7 - Show ShadeAC commands and info.\n" +
             "§b/shade violations <player>§7 or§b/violations <player>§7 - Show player's all violations.\n" +
             "§b/shade reset <[check(example: Fly.A)]/checks/vl/help> <player>§7 - Reset player's vl.\n" +
             "§b/shade alerts§7 or §b/alerts§7 - Enable or Disable Alert Log.\n \n" +

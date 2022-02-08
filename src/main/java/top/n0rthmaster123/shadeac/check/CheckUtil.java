@@ -2,14 +2,17 @@ package top.n0rthmaster123.shadeac.check;
 
 import org.bukkit.Bukkit;
 import top.n0rthmaster123.shadeac.ShadeAC;
+import top.n0rthmaster123.shadeac.check.checks.combat.aim.AimA;
 import top.n0rthmaster123.shadeac.check.checks.combat.autoclicker.*;
 import top.n0rthmaster123.shadeac.check.checks.combat.reach.*;
 import top.n0rthmaster123.shadeac.check.checks.movement.badpackets.*;
 import top.n0rthmaster123.shadeac.check.checks.movement.flight.*;
 import top.n0rthmaster123.shadeac.check.checks.movement.groundspoof.*;
+import top.n0rthmaster123.shadeac.check.checks.movement.jesus.*;
 import top.n0rthmaster123.shadeac.check.checks.movement.motion.*;
 import top.n0rthmaster123.shadeac.check.checks.movement.speed.*;
 import top.n0rthmaster123.shadeac.check.checks.movement.step.*;
+import top.n0rthmaster123.shadeac.check.checks.movement.vclip.*;
 
 import java.util.ArrayList;
 
@@ -23,9 +26,11 @@ public class CheckUtil {
         checks.clear();
 
 
+        checks.add( new AimA( new Check( "Aim","A", ac , CheckCategory.COMBAT ) ) );
         checks.add( new AutoClickerA( new Check( "AutoClicker","A", ac , CheckCategory.COMBAT ) ) );
         checks.add( new AutoClickerB( new Check( "AutoClicker","B", ac , CheckCategory.COMBAT ) ) );
         checks.add( new ReachA( new Check( "Reach","A", ac , CheckCategory.COMBAT ) ) );
+        checks.add( new ReachB( new Check( "Reach","B", ac , CheckCategory.COMBAT ) ) );
         checks.add( new FlightA( new Check( "Flight","A", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new FlightB( new Check( "Flight","B", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new FlightC( new Check( "Flight","C", ac , CheckCategory.MOVEMENT ) ) );
@@ -41,7 +46,16 @@ public class CheckUtil {
         checks.add( new MotionC( new Check( "Motion","C", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new MotionD( new Check( "Motion","D", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new MotionE( new Check( "Motion","E", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new MotionF( new Check( "Motion","F", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new MotionG( new Check( "Motion","G", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new MotionH( new Check( "Motion","H", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new MotionI( new Check( "Motion","I", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new StepA( new Check( "Step","A", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new VClipA( new Check( "VClip","A", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new VClipB( new Check( "VClip","B", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new JesusA( new Check( "Jesus","A", ac , CheckCategory.MOVEMENT ) ) );
+        checks.add( new JesusB( new Check( "Jesus","B", ac , CheckCategory.MOVEMENT ) ) );
+        //checks.add( new JesusC( new Check( "Jesus","C", ac , CheckCategory.MOVEMENT ) ) );
         //checks.add( new StepB( new Check( "Step","B", ac , CheckCategory.MOVEMENT ) ) );
         checks.add( new BadPacketsA( new Check( "BadPackets","A", ac , CheckCategory.PLAYER ) ) );
         checks.add( new BadPacketsB( new Check( "BadPackets","B", ac , CheckCategory.PLAYER ) ) );

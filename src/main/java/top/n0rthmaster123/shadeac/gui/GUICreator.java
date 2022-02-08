@@ -154,7 +154,7 @@ public class GUICreator {
                 if( chk.check.getCheck() == "Flight" || chk.check.getCheck() == "Speed" ){
                     gui.addItem( Material.FEATHER , chk.check.getCheck() , amount ,slot );
                 }
-                else if( chk.check.getCheck() == "Motion" ){
+                else if( chk.check.getCheck() == "Motion" || chk.check.getCheck() == "VClip" ){
                     gui.addItem( Material.RABBIT_FOOT, chk.check.getCheck() , amount ,slot );
                 }
                 else if( chk.check.getCheck() == "GroundSpoof"){

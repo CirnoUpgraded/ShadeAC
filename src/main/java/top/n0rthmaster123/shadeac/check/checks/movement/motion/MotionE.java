@@ -16,8 +16,9 @@ public class MotionE extends Checker {
         double pred = ( e.getLastDeltaY() - 0.08 ) * 0.98;
         double accel = Math.abs( e.getDeltaY() - pred );
         if( accel > 0.5 && e.getDeltaY() > 5 ){
-            e.fail( this );
-            e.verbose( "accel = " + accel );
+//            e.fail( this );
+//            e.verbose( "accel = " + accel );
+            fail( e.getPlayer() , "accel = " + accel );
         }
     }
 }

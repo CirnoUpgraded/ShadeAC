@@ -22,6 +22,11 @@ public class AutoClickerA extends Checker {
     public static HashMap<Player, List> clickes = new HashMap<>();
     public static HashMap<Player,Integer> clickVl = new HashMap<>();
 
+
+    public static int getCPS(Player p){
+        return ( clicks.get( p ) != null ? clicks.get( p ) : 0 );
+    }
+
     @EventHandler
     public void onClick(PlayerAnimationEvent e){
         if( e.getAnimationType() != PlayerAnimationType.ARM_SWING )return;

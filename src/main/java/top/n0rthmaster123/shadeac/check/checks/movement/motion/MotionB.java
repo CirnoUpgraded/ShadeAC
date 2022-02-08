@@ -25,8 +25,9 @@ public class MotionB extends Checker {
         //e.getPlayer().sendMessage( "diff = " + Math.abs( max_delta_y - e.getDeltaY() ) );
         WrappedPacketInFlying wrapped = new WrappedPacketInFlying( e.getNMSPacket() );
         if( e.getDeltaY() > max_delta_y && !e.isWaterAround( e.getTo() , 2,2 ) ){
-            e.fail( this );
-            e.verbose( "deltaY = " + e.getDeltaY() );
+//            e.fail( this );
+//            e.verbose( "deltaY = " + e.getDeltaY() );
+            fail( e.getPlayer() , "deltaY = " + e.getDeltaY() );
         }
     }
 }

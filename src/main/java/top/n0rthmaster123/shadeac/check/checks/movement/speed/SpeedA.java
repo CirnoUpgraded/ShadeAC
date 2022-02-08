@@ -22,8 +22,9 @@ public class SpeedA extends Checker {
         if( e.isWaterAround( e.getTo() , 2 ,2 ) )return;
         if( e.getAirtick() > 2 ){
             if( e.getLastDeltaXZ() == e.getDeltaXZ() ){
-                e.fail( this );
-                e.verbose( "deltaXZ and last deltaXZ is same." );
+//                e.fail( this );
+//                e.verbose( "deltaXZ and last deltaXZ is same." );
+                fail( e.getPlayer() , "" );
             }
         }
     }

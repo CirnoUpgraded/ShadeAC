@@ -51,7 +51,7 @@ public class AlertTheme {
     }
 
     public String getReplacedMessage(Player p,Check check,int vl,int check_vl,String info){
-        return format.replace( "%%player%%",p.getName() ).replace( "%%check%%",check.getCheck() ).replace( "%%type%%",check.getType() ).replace( "%%vl%%" , vl + "" ).replace( "%%vl-check%%" ,check_vl + "" ).replace( "%%info%%" , info ).replace( "%%check-upper%%",check.getCheck().toUpperCase() );
+        return format.replace( "%%player%%",p.getName() ).replace( "%%check%%",check.getCheck() ).replace( "%%type%%",check.getType() ).replace( "%%vl%%" , vl + "" ).replace( "%%vl-check%%" ,check_vl + "" ).replace( "%%info%%" , info ).replace( "%%check-upper%%",check.getCheck().toUpperCase() ).replace( "%%ping%%",ShadeUtil.getPing( p )+"" );
     }
 
     public String getReplacedMessageExample(){

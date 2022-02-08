@@ -43,8 +43,9 @@ public class FlightC extends Checker {
             }
         }
         if( vl.get( p ) != null && vl.get( p ) > 2 ){
-            e.fail( this );
-            e.verbose( "deltaY = " + e.getDeltaY() );
+            //e.fail( this );
+            //e.verbose( "deltaY = " + e.getDeltaY() );
+            fail( p , "deltaY = " + e.getDeltaY() );
         }
     }
 

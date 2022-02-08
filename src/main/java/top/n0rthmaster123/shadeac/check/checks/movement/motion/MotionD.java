@@ -32,8 +32,9 @@ public class MotionD extends Checker {
             int tick = addAndGet( e.getPlayer() );
             double motionY = e.getTo().getY() - e.getFrom().getY();
             if( wrapped.getPosition().getY() < -0.079 && e.getTo().getY() <= e.getFrom().getY() && tick > 2 ){
-                e.fail( this );
+                //e.fail( this );
                 //e.verbose( "DeltaY = " + motionY + " groundTick = " + tick );
+                fail( e.getPlayer() , "DeltaY = " + motionY + " groundTick = " + tick );
             }
         }
     }

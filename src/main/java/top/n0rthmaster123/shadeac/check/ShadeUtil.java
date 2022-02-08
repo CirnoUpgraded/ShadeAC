@@ -1,8 +1,10 @@
 package top.n0rthmaster123.shadeac.check;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 
 public class ShadeUtil {
@@ -70,5 +72,22 @@ public class ShadeUtil {
         }
         return violations.get( p ).getOrDefault( check.getCheck() + "." + check.getType() , 0 );
     }
+
+    public static String getBukkitVersion() {
+        return Bukkit.getServer().getClass().getPackage().getName().substring(23);
+    }
+
+    public static int getPing(Player p) {
+        try {
+            Class<?> craftPlayer = Class.forName("org.bukkit.craftbukkit." + getBukkitVersion() + ".entity.CraftPlayer");
+            Object handle = craftPlayer.getMethod("getHandle", new Class[0]).invoke(p, new Object[0]);
+            Field pingField = handle.getClass().getDeclaredField("ping");
+            pingField.setAccessible(true);
+            return pingField.getInt(handle);
+        } catch (IllegalAccessException|ClassNotFoundException|IllegalArgumentException|java.lang.reflect.InvocationTargetException|NoSuchMethodException|SecurityException|NoSuchFieldException e) {
+            return -1;
+        }
+    }
+
 
 }

@@ -33,8 +33,9 @@ public class FlightB extends Checker {
                 if( vl.get( p ) != null ){
                     vl.put( p , vl.get( p ) + 1 );
                     if( vl.get( p ) > 2 ){
-                        e.fail( this );
-                        e.verbose( "lastDY = " + e.getLastDeltaY() + " motionY = " + motionY + " airtick = " + e.getAirtick() );
+//                        e.fail( this );
+//                        e.verbose( "lastDY = " + e.getLastDeltaY() + " motionY = " + motionY + " airtick = " + e.getAirtick() );
+                        fail( p , "lastDY = " + e.getLastDeltaY() + " motionY = " + motionY + " airtick = " + e.getAirtick() );
                         vl.put( p , 0 );
                     }
                 }else {

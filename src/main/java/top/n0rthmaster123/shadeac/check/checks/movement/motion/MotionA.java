@@ -27,8 +27,9 @@ public class MotionA extends Checker {
         if( e.getDeltaY() == 0 )return;
         if( e.getAirtick() > 2 ){
             if( e.getDeltaY() ==  e.getLastDeltaY() ){
-                e.fail( this );
-                e.verbose( "dY = " + e.getDeltaY() + " lastDy = " + e.getLastDeltaY() );
+//                e.fail( this );
+//                e.verbose( "dY = " + e.getDeltaY() + " lastDy = " + e.getLastDeltaY() );
+                fail( e.getPlayer() , "dY = " + e.getDeltaY() + " lastDy = " + e.getLastDeltaY() );
             }
         }
 

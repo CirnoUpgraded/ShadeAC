@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import top.n0rthmaster123.shadeac.ban.BanUtil;
 import top.n0rthmaster123.shadeac.check.AlertThemeUtil;
 import top.n0rthmaster123.shadeac.check.CheckUtil;
+import top.n0rthmaster123.shadeac.check.FailUtil;
 import top.n0rthmaster123.shadeac.check.PacketListener;
 import top.n0rthmaster123.shadeac.commands.Alerts;
 import top.n0rthmaster123.shadeac.commands.Shade;

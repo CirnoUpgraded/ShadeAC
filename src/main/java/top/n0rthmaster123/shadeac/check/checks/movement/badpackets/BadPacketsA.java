@@ -15,8 +15,9 @@ public class BadPacketsA extends Checker {
     public void onMove(ShadeMoveEvent e){
         WrappedPacketInFlying wrapped = new WrappedPacketInFlying( e.getNMSPacket() );
         if( Math.abs( wrapped.getPitch() ) > 90 ){
-            e.fail( this );
-            e.verbose( "pitch = " + wrapped.getPitch() );
+//            e.fail( this );
+//            e.verbose( "pitch = " + wrapped.getPitch() );
+            fail( e.getPlayer() , "pitch = " + wrapped.getPitch() );
         }
     }
 }

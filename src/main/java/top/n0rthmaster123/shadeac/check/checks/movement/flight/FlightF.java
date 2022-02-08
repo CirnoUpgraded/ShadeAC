@@ -49,8 +49,9 @@ public class FlightF extends Checker {
             double diff = Math.abs( accel - lastAccel );
             if( diff != 0 && diff < 0.000001 ){ //too small y accel check :)
                 if( ++buffer > 2 ) {
-                    e.fail( this );
-                    e.verbose( "diff = " + diff + " buffer = " + buffer );
+                    //e.fail( this );
+                    //e.verbose( "diff = " + diff + " buffer = " + buffer );
+                    fail( p , "diff = " + diff + " buffer = " + buffer );
                 }
             }
             buffers.put( p , buffer );

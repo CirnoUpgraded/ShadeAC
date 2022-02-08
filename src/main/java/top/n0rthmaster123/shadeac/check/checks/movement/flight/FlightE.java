@@ -46,11 +46,12 @@ public class FlightE extends Checker {
         if( e.getAirtick() > 1 && motionY > 0 ){
             boolean legitUp = e.getDeltaY() < e.getLastDeltaY();
             if( !legitUp ){
-                e.fail( this );
-                if(++buffer > 1 ) {
-                    e.verbose( "buffer = " + buffer + " my = " + motionY + " at = " + e.getAirtick() );
+                //e.fail( this );
+                if(++buffer > 2 ) {
+                    fail( p , "buffer = " + buffer + " my = " + motionY + " at = " + e.getAirtick() );
+                    //e.verbose( "buffer = " + buffer + " my = " + motionY + " at = " + e.getAirtick() );
                 } else {
-                    e.verbose( "my = " + motionY + " at = " + e.getAirtick() );
+                    //e.verbose( "my = " + motionY + " at = " + e.getAirtick() );
                 }
             }
         }

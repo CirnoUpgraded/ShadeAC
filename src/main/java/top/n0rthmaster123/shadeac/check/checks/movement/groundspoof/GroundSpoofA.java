@@ -18,7 +18,7 @@ public class GroundSpoofA extends Checker {
         }
         if( FlightA.isNearBlockAction( e.getPlayer() ) )return;
         if( e.getPlayer().isOnGround() && ( !( e.getAirtick() > 2 ) && !e.onGround() ) ){
-            e.fail( this );
+            fail( e.getPlayer() , "" );
         }
     }
 

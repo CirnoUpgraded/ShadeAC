@@ -29,8 +29,9 @@ public class FlightD extends Checker {
         if( e.getAirtick() > 11 && motionY < 0 ){
             boolean legitFall = e.getDeltaY() > e.getLastDeltaY();
                 if( !legitFall ){
-                    e.fail( this );
-                    e.verbose( "motionY = " + motionY );
+                    //e.fail( this );
+                    //e.verbose( "motionY = " + motionY );
+                    fail( p , "motionY = " + motionY );
                 }
 //            p.sendMessage( " " + (  ) );
         }

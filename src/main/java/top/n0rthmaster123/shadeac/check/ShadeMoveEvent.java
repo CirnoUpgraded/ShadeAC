@@ -171,6 +171,20 @@ public class ShadeMoveEvent extends Event {
         return false;
     }
 
+    public boolean isPistonAround(Location loc ,int radius ,int radiusY ) {
+        for (int x = -radius; x < radius; x++) {
+            for (int y = -radiusY; y < radiusY; y++) {
+                for (int z = -radius; z < radius; z++) {
+                    Block block = loc.getWorld().getBlockAt(loc.clone().add(x, y, z));
+                    if ( block.getType().toString().equalsIgnoreCase( "piston" ) ){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     public boolean isStandingBoat(Player p){
         boolean r = false;
         for(Entity e : p.getWorld().getEntities()){
@@ -228,16 +242,24 @@ public class ShadeMoveEvent extends Event {
     }
 
     public void fail(Checker checker){
-        if(failed)return;
-        this.checker = checker;
-        failed = true;
+        if(!failed) {
+            this.checker = checker;
+            failed = true;
+        }else{
+            FailUtil.fail( p,"",checker.check );
+        }
     }
 
     public void verbose(String verbose){
         if(verbosed || !failed )return;
-        verbosed = true;
-        this.verbose = verbose;
+        FailUtil.fail( p,verbose,checker.check );
     }
+
+
+    public int getPing(Player p) {
+        return ShadeUtil.getPing( p );
+    }
+
 
 
     public static HandlerList getHandlerList() {

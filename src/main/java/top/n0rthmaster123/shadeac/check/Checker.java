@@ -18,11 +18,37 @@ public class Checker implements Listener {
         if( !CheckUtil.getCheck( check.getCheck() , check.getType() ).getStatus() ){
             return false;
         }
+
+        if( bypass( p ) )return false;
+
         ShadeUtil.setUpPlayerViolation( p );
         ShadeUtil.addVL( null ,p );
         ShadeUtil.addVL( check,p );
 
         String alert = AlertThemeUtil.getCurrentTheme().getReplacedMessage( p , check , ShadeUtil.getVL( null , p ) ,ShadeUtil.getVL( check , p ), ( info != "" ? info : "Nothing") );
+        for( Player px : Bukkit.getOnlinePlayers() ){
+            if( ShadeUtil.isAlertEnabled( p ) && p.hasPermission(  "shade.alerts" ) ){
+                //p.sendMessage( ShadeAC.prefix + "§c " + player.getName() + "§7 failed§6 " + check.getCheck() + "§8(§eVL§a " + ShadeUtil.getVL( check , player ) + "§8/§a" + ShadeUtil.getVL( null , player ) + "§8) (§eType:§a " + check.getType() + "§8) (§eInfo:§a " + ( shade.verbosed ? shade.verbose : "Nothing") + " §8)"  );
+                px.sendMessage( alert );
+            }
+        }
+        return true;
+    }
+
+    public boolean fail(Player p,String check,String type,String info){
+
+        Check c = CheckUtil.getCheck( check , type );
+        if( !c.getStatus() ){
+            return false;
+        }
+
+        if( bypass( p ) )return false;
+
+        ShadeUtil.setUpPlayerViolation( p );
+        ShadeUtil.addVL( null ,p );
+        ShadeUtil.addVL( c,p );
+
+        String alert = AlertThemeUtil.getCurrentTheme().getReplacedMessage( p , c , ShadeUtil.getVL( null , p ) ,ShadeUtil.getVL( c , p ), ( info != "" ? info : "Nothing") );
         for( Player px : Bukkit.getOnlinePlayers() ){
             if( ShadeUtil.isAlertEnabled( p ) && p.hasPermission(  "shade.alerts" ) ){
                 //p.sendMessage( ShadeAC.prefix + "§c " + player.getName() + "§7 failed§6 " + check.getCheck() + "§8(§eVL§a " + ShadeUtil.getVL( check , player ) + "§8/§a" + ShadeUtil.getVL( null , player ) + "§8) (§eType:§a " + check.getType() + "§8) (§eInfo:§a " + ( shade.verbosed ? shade.verbose : "Nothing") + " §8)"  );

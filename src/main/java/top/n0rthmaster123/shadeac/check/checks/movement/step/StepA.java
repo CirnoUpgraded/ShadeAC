@@ -18,8 +18,9 @@ public class StepA extends Checker {
         if( e.getTo().getY() % 0.015625 < 0.0001 ) {
             if ( e.onLastGround( ) ) {
                 if ( e.getDeltaY( ) > ( 0.5625 + ( e.getPlayer().hasPotionEffect( PotionEffectType.JUMP ) ? e.getPotionLevel( PotionEffectType.JUMP ) * 0.1 : 0 ) ) ) {
-                    e.fail( this );
-                    e.verbose( "DeltaY = " + e.getDeltaY() );
+                    //e.fail( this );
+                    //e.verbose( "DeltaY = " + e.getDeltaY() );
+                    fail( e.getPlayer() , "DeltaY = " + e.getDeltaY() );
                 }
             }
         }
